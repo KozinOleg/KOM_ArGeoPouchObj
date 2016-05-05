@@ -13,13 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.ok.kom_argeopouchobj;
+package com.example.ok.kom_argeopouchobj.ar_beyond;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
 
 import com.beyondar.android.world.GeoObject;
 import com.beyondar.android.world.World;
+import com.example.ok.kom_argeopouchobj.R;
 
 @SuppressLint("SdCardPath")
 public class CustomWorldHelper {

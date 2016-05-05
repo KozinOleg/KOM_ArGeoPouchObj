@@ -13,8 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.ok.kom_argeopouchobj;
-
+package com.example.ok.kom_argeopouchobj.google_utils;
 
 import com.example.ok.kom_argeopouchobj.camera.GraphicOverlay;
 
@@ -23,14 +22,14 @@ import com.example.ok.kom_argeopouchobj.camera.GraphicOverlay;
  * {@link GraphicTracker} avoids the need to duplicate this code for both the face and barcode
  * instances.
  */
-abstract class TrackedGraphic<T> extends GraphicOverlay.Graphic {
+public abstract class TrackedGraphic<T> extends GraphicOverlay.Graphic {
     private int mId;
 
-    TrackedGraphic(GraphicOverlay overlay) {
+    protected TrackedGraphic(GraphicOverlay overlay) {
         super(overlay);
     }
 
-    void setId(int id) {
+    public void setId(int id) {
         mId = id;
     }
 
@@ -38,5 +37,5 @@ abstract class TrackedGraphic<T> extends GraphicOverlay.Graphic {
         return mId;
     }
 
-    abstract void updateItem(T item);
+    public abstract void updateItem(T item);
 }

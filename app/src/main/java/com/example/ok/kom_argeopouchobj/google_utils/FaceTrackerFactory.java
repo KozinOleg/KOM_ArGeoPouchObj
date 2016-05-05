@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.ok.kom_argeopouchobj;
+package com.example.ok.kom_argeopouchobj.google_utils;
 
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -28,10 +28,10 @@ import com.google.android.gms.vision.face.Face;
  * Factory for creating a tracker and associated graphic to be associated with a new face.  The
  * multi-processor uses this factory to create face trackers as needed -- one for each individual.
  */
-class FaceTrackerFactory implements MultiProcessor.Factory<Face> {
+public class FaceTrackerFactory implements MultiProcessor.Factory<Face> {
     private GraphicOverlay mGraphicOverlay;
 
-    FaceTrackerFactory(GraphicOverlay graphicOverlay) {
+    public FaceTrackerFactory(GraphicOverlay graphicOverlay) {
         mGraphicOverlay = graphicOverlay;
     }
 
@@ -49,8 +49,8 @@ class FaceTrackerFactory implements MultiProcessor.Factory<Face> {
 class FaceGraphic extends TrackedGraphic<Face> {
     private static final float FACE_POSITION_RADIUS = 10.0f;
     private static final float ID_TEXT_SIZE = 40.0f;
-    private static final float ID_Y_OFFSET = 50.0f;
-    private static final float ID_X_OFFSET = -50.0f;
+//    private static final float ID_Y_OFFSET = 50.0f;
+//    private static final float ID_X_OFFSET = -50.0f;
     private static final float BOX_STROKE_WIDTH = 5.0f;
 
     private static final int COLOR_CHOICES[] = {
@@ -89,7 +89,7 @@ class FaceGraphic extends TrackedGraphic<Face> {
      * Updates the face instance from the detection of the most recent frame.  Invalidates the
      * relevant portions of the overlay to trigger a redraw.
      */
-    void updateItem(Face face) {
+    public void updateItem(Face face) {
         mFace = face;
         postInvalidate();
     }
@@ -107,16 +107,19 @@ class FaceGraphic extends TrackedGraphic<Face> {
         // Draws a circle at the position of the detected face, with the face's track id below.
         float cx = translateX(face.getPosition().x + face.getWidth() / 2);
         float cy = translateY(face.getPosition().y + face.getHeight() / 2);
+
         canvas.drawCircle(cx, cy, FACE_POSITION_RADIUS, mFacePositionPaint);
-        canvas.drawText("id: " + getId(), cx + ID_X_OFFSET, cy + ID_Y_OFFSET, mIdPaint);
+//        canvas.drawText("id: " + getId(), cx + ID_X_OFFSET, cy + ID_Y_OFFSET, mIdPaint);
 
         // Draws an oval around the face.
-        float xOffset = scaleX(face.getWidth() / 2.0f);
-        float yOffset = scaleY(face.getHeight() / 2.0f);
-        float left = cx - xOffset;
-        float top = cy - yOffset;
-        float right = cx + xOffset;
-        float bottom = cy + yOffset;
-        canvas.drawOval(left, top, right, bottom, mBoxPaint);
+//        float xOffset = scaleX(face.getWidth() / 2.0f);
+//        float yOffset = scaleY(face.getHeight() / 2.0f);
+//        float left = cx - xOffset;
+//        float top = cy - yOffset;
+//        float right = cx + xOffset;
+//        float bottom = cy + yOffset;
+
+//        canvas.drawOval(left, top, right, bottom, mBoxPaint);
+//        canvas.drawPaint(mBoxPaint);
     }
 }

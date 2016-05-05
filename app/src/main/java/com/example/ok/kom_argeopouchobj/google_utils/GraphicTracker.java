@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.ok.kom_argeopouchobj;
+package com.example.ok.kom_argeopouchobj.google_utils;
 
 import com.example.ok.kom_argeopouchobj.camera.GraphicOverlay;
 import com.google.android.gms.vision.Detector;

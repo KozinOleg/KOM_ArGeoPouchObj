@@ -26,7 +26,7 @@
             android:name="com.google.android.gms.vision.DEPENDENCIES"
             android:value="barcode,face" />
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".activitys.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
